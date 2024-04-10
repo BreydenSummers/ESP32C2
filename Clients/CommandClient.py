@@ -6,14 +6,13 @@ import dns.message
 
 
 
-# Prepare the query
 
 def makeQuery(command, ip, domain):
     record_type = 'A'  # Can be 'MX', 'NS', 'TXT', etc.
-    #domain = 'command.ddos.5-5-5-5.com'
     dns_server = '127.0.0.1'  # Example DNS server
     dns_port = 53533  # Example non-standard port
-    query = dns.message.make_query(domain, record_type)
+    # Prepare the query
+    query = dns.message.make_query(domain, record_type) 
 
     try:
         # Perform the DNS query to the specified server and port
