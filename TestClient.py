@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+
 import dns.query
 import dns.resolver
 import dns.message
