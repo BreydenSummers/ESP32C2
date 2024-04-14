@@ -3,8 +3,8 @@
 #include "dns.h"
 
 // WiFi credentials.
-const char* ssid = "Summers";
-const char* password = "4352450190";
+const char* ssid = "";
+const char* password = "";
 
 // DNS server to query.
 const IPAddress dnsServer(192, 168, 1, 145); // The C2 Server
