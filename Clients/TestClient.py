@@ -8,7 +8,7 @@ import dns.message
 domain = 'example.com'
 record_type = 'A'  # Can be 'MX', 'NS', 'TXT', etc.
 dns_server = '127.0.0.1'  # Example DNS server
-dns_port = 53533  # Example non-standard port
+dns_port = 53  # Example non-standard port
 
 # Prepare the query
 query = dns.message.make_query(domain, record_type)

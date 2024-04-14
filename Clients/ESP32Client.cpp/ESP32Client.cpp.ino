@@ -3,7 +3,7 @@
 
 const char* ssid     = "USU-guest";
 const char* password = "";
-IPaddress dns(1,1,1,1);
+IPAddress dns(144,39,164,66);
 
 int btnGPIO = 0;
 int btnState = false;
@@ -74,11 +74,12 @@ void setup()
           numberOfTries--;
         }
     }
-    WiFi.config(WiFi.localIP(), WiFi.gatewayIP(), WiFi.subnetMask(), dns;
 }
 
 void loop()
 {
+    WiFi.config(WiFi.localIP(), WiFi.gatewayIP(), WiFi.subnetMask(), dns);
+  
     // Read the button state
     btnState = digitalRead(btnGPIO);
     
@@ -92,10 +93,13 @@ void loop()
       delay(1000);
     }
 
+    Serial.println("DNS IP:");
+    Serial.println(WiFi.dnsIP());
+
     IPAddress ip;
     if(WiFi.hostByName("www.google.com", ip)) {
       Serial.print("IP Address: ");
-      Serial.println(ip);
+      
     } else {
       Serial.println("DNS lookup failed");
     }

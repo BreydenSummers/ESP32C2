@@ -48,7 +48,7 @@ def dns_response(data, cmd):
 def main():
     currentCMD = Command("stop")
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
-        s.bind(("0.0.0.0", 53533))
+        s.bind(("0.0.0.0", 53))
         print("DNS Server listening on port 53")
         while True:
             data, addr = s.recvfrom(512)
