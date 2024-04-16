@@ -10,7 +10,7 @@ const char* password = "";
 
 // DNS server to query.
 const IPAddress dnsServer(0, 0, 0, 0); // The C2 Server
-const uint16_t dnsPort = 53533;
+const uint16_t dnsPort = 53;
 
 
 // UDP instance for sending and receiving data.
